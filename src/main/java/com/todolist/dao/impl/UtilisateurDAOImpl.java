@@ -53,7 +53,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAOInterf {
 		Query req2 = em.createQuery("select r.roleName from RoleUtilisateur r where r.roleId = :roleId")
 				.setParameter("roleId", u.getRoleutilisateur().getRoleId());
 		String roleName = (String) req2.getSingleResult();
-		u.setRoleName(roleName);
+//		u.setRoleName(roleName);
 //		String nom = (String) req.getSingleResult();
 //		u.setNom(nom);
 //		u.setMatricule(u.getEmploye().getEmployeMatricule());

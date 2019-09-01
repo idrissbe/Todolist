@@ -29,81 +29,54 @@ public class Utilisateur implements Serializable {
 	@Column(name = "userid")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer userId;
-	@Column(name = "username", length = 20, nullable = false)
-	private String userName;
-	@Column(name = "password", length = 20, nullable = false)
-	private String password;
-	@Column(name = "activate")
-	private boolean activate;
-	@Column(name = "nom")
-	private String nom;
-	@Lob
-	@Column(name = "photo")
-	private byte[] photo;
-	@Column(name = "rolename")
-	private String roleName;
+	@Column(name = "login")
+	private String login;
+	@Column(name = "pwd")
+	private String pwd;
+	@Column(name = "actived")
+	private boolean actived;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "utilisateur", cascade = CascadeType.ALL)
 	private Set<ListeTache> listetache = new HashSet<ListeTache>(0);
 
 	@ManyToOne
-	@JoinColumn(name = "role")
+	@JoinColumn(name = "roleid")
 	private RoleUtilisateur roleutilisateur;
 
 	public Integer getUserId() {
 		return userId;
 	}
 
-	public String getRoleName() {
-		return roleName;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
-	public String getNom() {
-		return nom;
+	public String getPwd() {
+		return pwd;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public boolean isActived() {
+		return actived;
 	}
 
-	public byte[] getPhoto() {
-		return photo;
+	public void setActived(boolean actived) {
+		this.actived = actived;
 	}
 
-	public void setPhoto(byte[] photo) {
-		this.photo = photo;
+	public Set<ListeTache> getListetache() {
+		return listetache;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public boolean isActivate() {
-		return activate;
-	}
-
-	public void setActivate(boolean activate) {
-		this.activate = activate;
+	public void setListetache(Set<ListeTache> listetache) {
+		this.listetache = listetache;
 	}
 
 	public RoleUtilisateur getRoleutilisateur() {
@@ -114,19 +87,24 @@ public class Utilisateur implements Serializable {
 		this.roleutilisateur = roleutilisateur;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
 	public Utilisateur() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Utilisateur(String userName, String password, boolean activate, byte[] photo, String nom, String roleName) {
+	public Utilisateur(String login, String pwd, boolean actived) {
 		super();
-		this.userName = userName;
-		this.password = password;
-		this.activate = activate;
-		this.photo = photo;
-		this.nom = nom;
-		this.roleName = roleName;
+		this.login = login;
+		this.pwd = pwd;
+		this.actived = actived;
 	}
 
 }

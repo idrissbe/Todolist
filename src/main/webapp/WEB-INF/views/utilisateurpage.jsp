@@ -16,14 +16,14 @@
 				<div class="row">
 					<f:input path="userId" type="text" style="display : none" />
 					<div class="input-field col s12 m8 l6">
-						<f:input path="userName" type="text" class="validate" />
-						<label for="userName">Username</label>
+						<f:input path="login" type="text" class="validate" />
+						<label for="login">Login</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12 m8 l6">
-						<f:input path="password" type="password" class="validate" />
-						<label for="password">Password</label>
+						<f:input path="pwd" type="password" class="validate" />
+						<label for="pwd">Password</label>
 					</div>
 				</div>
 				<div class="row">
@@ -35,7 +35,7 @@
 					</div>
 
 					<div class="input-field col s12 m8 l2">
-						<f:select path="activate" type="text" class="validate">
+						<f:select path="actived" type="text" class="validate">
 							<f:option value="true">True</f:option>
 							<f:option value="false">False</f:option>
 						</f:select>
@@ -67,11 +67,10 @@
 				<thead>
 					<tr>
 						<th>Action</th>
-						<th>Username</th>
+						<th>User Id</th>
+						<th>LOGIN</th>
 						<th>Password</th>
 						<th>Role ID</th>
-						<th>Nom</th>
-						<th>Photo</th>
 						<th>Activate</th>
 					</tr>
 				</thead>
@@ -82,15 +81,11 @@
 								class="material-icons">mode_edit</i></a>&nbsp;<a
 							href="deleteUtilisateur?userId=${utilisateurlis.userId}"><i
 								class="material-icons">delete</i></a></td>
-
-						<td>${utilisateurlis.userName}</td>
-						<td>${utilisateurlis.password}</td>
-						<td>${utilisateurlis.roleName}</td>
-						<td>${utilisateurlis.nom}</td>
-						<td><img src="photoUt?userId=${utilisateurlis.userId}" /></td>
-						<td>${utilisateurlis.activate}</td>
-
-
+						<td>${utilisateurlis.userId}</td>
+						<td>${utilisateurlis.login}</td>
+						<td></td>
+						<td>${utilisateurlis.roleutilisateur.roleId}</td>
+						<td>${utilisateurlis.actived}</td>
 					</tr>
 				</c:forEach>
 

@@ -78,10 +78,10 @@ public class UtilisateurController {
 		return "utilisateurpage";
 	}
 
-	@RequestMapping(value = "/photoUt", produces = MediaType.IMAGE_JPEG_VALUE)
-	@ResponseBody
-	public byte[] photoEmpl(Integer userId) throws IOException {
-		Utilisateur u = utilisateurMetierInterf.getUtilisateur(userId);
-		return IOUtils.toByteArray(new ByteArrayInputStream(u.getPhoto()));
-	}
+//	@RequestMapping(value = "/photoUt", produces = MediaType.IMAGE_JPEG_VALUE)
+//	@ResponseBody
+//	public byte[] photoEmpl(Integer userId) throws IOException {
+//		Utilisateur u = utilisateurMetierInterf.getUtilisateur(userId);
+//		return IOUtils.toByteArray(new ByteArrayInputStream(u.getPhoto()));
+//	}
 }
