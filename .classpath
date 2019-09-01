@@ -26,5 +26,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/ibelaid/Downloads/junit.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ibelaid/Downloads/mysql-connector-java-8.0.17 (1).zip"/>
+	<classpathentry kind="lib" path="C:/Users/ibelaid/Downloads/mysql-connector-odbc-noinstall-8.0.17-winx64.zip"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

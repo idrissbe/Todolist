@@ -14,9 +14,9 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver"></property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/todolist"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value=""></property>
+			value="jdbc:mysql://eu-cdbr-west-02.cleardb.net/:3306/heroku_bbbef9bdd20ba2b"></property>
+		<property name="username" value="ba8d88ad978c01"></property>
+		<property name="password" value="e247cf33"></property>
 	</bean>
 	<bean id="persistenceUnitManager"
 		class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
