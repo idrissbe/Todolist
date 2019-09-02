@@ -15,25 +15,21 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 		<tomcat.version>8.5.39</tomcat.version>
 	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-core</artifactId>
-			<version>${tomcat.version}</version>
+			<dependencies>
+			<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-core</artifactId>
+		    <version>${tomcat.version}</version>
 		</dependency>
+		
 		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<version>${tomcat.version}</version>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		    <version>${tomcat.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-logging-juli -->
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-logging-juli</artifactId>
-			<version>8.5.2</version>
-		</dependency>
-
-
+		
+		
+		
 		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -268,9 +264,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.github.jsimone</groupId>
-			<artifactId>webapp-runner</artifactId>
-			<version>8.5.39.0</version>
+		<groupId>com.github.jsimone</groupId>
+		<artifactId>webapp-runner</artifactId>
+		<version>8.5.39.0</version>
 		</dependency>
 
 		<dependency>
@@ -353,7 +349,7 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-
+					
 					<compilerArgument>-Xlint:all</compilerArgument>
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>
@@ -368,29 +364,27 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>copy</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>com.github.jsimone</groupId>
-									<artifactId>webapp-runner</artifactId>
-									<version>8.5.39.0</version>
-									<destFileName>webapp-runner.jar</destFileName>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals><goal>copy</goal></goals>
+                    <configuration>
+                        <artifactItems>
+                            <artifactItem>
+                                <groupId>com.github.jsimone</groupId>
+                                <artifactId>webapp-runner</artifactId>
+                                <version>8.5.39.0</version>
+                                <destFileName>webapp-runner.jar</destFileName>
+                            </artifactItem>
+                        </artifactItems>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
 		</plugins>
-
+		
 	</build>
 </project>
 		
